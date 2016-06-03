@@ -1,0 +1,15 @@
+{
+  "name": "sass-mixins",
+  "version": "1.0.0",
+  "description": "Useful sass mixins",
+  "main": "mixins.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "mixin"
+  ],
+  "author": "Ash",
+  "license": "MIT"
+}

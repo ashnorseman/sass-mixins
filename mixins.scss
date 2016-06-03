@@ -1,0 +1,76 @@
+/**
+ * Created by Ash on 2016-06-02.
+ */
+
+
+// Mixin
+// ---------------------------
+
+@mixin clearfix {
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin full-size($position: absolute) {
+  position: $position;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* ----- Modal ----- */
+
+@mixin modal {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@mixin modal-opened {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@mixin modal-mask {
+
+  &::before {
+    content: '';
+    @include full-size(fixed);
+  }
+}
+
+/* ----- Modal end ----- */
+
+
+@mixin ratio($w, $h) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: percentage($h / $w);
+  }
+}
+
+@mixin square($size) {
+  line-height: $size;
+  text-align: center;
+  width: $size;
+}
